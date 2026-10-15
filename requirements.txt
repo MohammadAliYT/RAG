@@ -1,0 +1,8 @@
+pymupdf
+google-genai
+psycopg[binary]
+pgvector
+python-dotenv
+typer
+rich
+numpy
