@@ -6,13 +6,14 @@ services:
     environment:
       POSTGRES_DB: rag
       POSTGRES_USER: raguser
-      POSTGRES_PASSWORD: ragpassword
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     ports:
       - "5433:5432"
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
 
 volumes:
   postgres_data:
